@@ -4,28 +4,11 @@ server:
 spring:
   application:
     name: user-service
-  cloud:
-    config:
-      enabled: true
-      uri: http://localhost:8888
-
-  flyway:
-    locations: classpath:/db/migration
-    schemas: users
-    baselineOnMigrate: true
-    enabled: false
-
-  datasource:
-    driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/framepulse
-    username: postgres
-    password: root
 
   jpa:
     properties:
       hibernate:
         default_schema: users
-
 
   config:
     import: optional:configserver:http://localhost:8888
